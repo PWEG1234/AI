@@ -40,6 +40,53 @@ body{
 
 }
 
+/* ===========================
+      MENU BUTTON
+===========================*/
+
+.menu-btn{
+
+    position:fixed;
+
+    top:20px;
+
+    right:20px;
+
+    width:55px;
+
+    height:55px;
+
+    border:none;
+
+    border-radius:18px;
+
+    background:rgba(255,255,255,.08);
+
+    backdrop-filter:blur(15px);
+
+    color:white;
+
+    font-size:30px;
+
+    cursor:pointer;
+
+    z-index:3000;
+
+    transition:.35s;
+
+    box-shadow:0 0 25px rgba(0,255,255,.35);
+
+}
+
+.menu-btn:hover{
+
+    background:#00ffff;
+
+    color:black;
+
+    transform:scale(1.08);
+
+}
 
 
 @keyframes bgMove{
