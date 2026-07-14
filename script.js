@@ -11,6 +11,69 @@ const messages = document.getElementById("messages");
 const typing = document.getElementById("typing");
 
 
+// ===========================
+// MENU
+// ===========================
+
+const menuBtn = document.getElementById("menuBtn");
+const closeMenu = document.getElementById("closeMenu");
+const sideMenu = document.getElementById("sideMenu");
+const menuOverlay = document.getElementById("menuOverlay");
+
+
+function openMenu(){
+
+    sideMenu.classList.add("show");
+
+    menuOverlay.classList.add("show");
+
+}
+
+
+function closeMenuFunc(){
+
+    sideMenu.classList.remove("show");
+
+    menuOverlay.classList.remove("show");
+
+}
+
+
+
+if(menuBtn){
+
+    menuBtn.addEventListener("click", openMenu);
+
+}
+
+
+if(closeMenu){
+
+    closeMenu.addEventListener("click", closeMenuFunc);
+
+}
+
+
+if(menuOverlay){
+
+    menuOverlay.addEventListener("click", closeMenuFunc);
+
+}
+
+
+
+// بستن منو بعد از انتخاب گزینه
+
+document.querySelectorAll(".side-menu a").forEach(link=>{
+
+    link.addEventListener("click",()=>{
+
+        closeMenuFunc();
+
+    });
+
+});
+
 
 
 
@@ -147,7 +210,7 @@ async function sendMessage(){
 
         addMessage(
 
-        "خطا در اتصال به هوش مصنوعی ❌",
+        "متأسفانه مشکلی در سرور PWEG AI پیش آمده ، لطفا بعدا دوباره تلاش کنید.",
 
         "ai"
 
