@@ -1,4 +1,4 @@
-const API_URL = "https://pweg-ai.pwegaparat.workers.dev/";
+const API_URL = "https://pweg-ai.pwegaparat.workers.dev";
 
 
 
