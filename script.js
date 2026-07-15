@@ -1,7 +1,6 @@
 const API_URL = "https://pweg-ai.pwegaparat.workers.dev";
 
 
-
 const input = document.getElementById("userInput");
 
 const sendBtn = document.getElementById("sendBtn");
@@ -11,34 +10,35 @@ const messages = document.getElementById("messages");
 const typing = document.getElementById("typing");
 
 
+
 function addMessage(text,type){
 
+    const div = document.createElement("div");
 
-    const div=document.createElement("div");
+    div.className = "message " + type;
 
-
-    div.className="message " + type;
-
-
-    div.innerText=text;
-
+    div.innerText = text;
 
     messages.appendChild(div);
 
-
-    messages.scrollTop =
-    messages.scrollHeight;
+    messages.scrollTop = messages.scrollHeight;
 
 }
+
+
 
 // ===========================
 // MENU
 // ===========================
 
 const menuBtn = document.getElementById("menuBtn");
+
 const closeMenu = document.getElementById("closeMenu");
+
 const sideMenu = document.getElementById("sideMenu");
+
 const menuOverlay = document.getElementById("menuOverlay");
+
 
 
 function openMenu(){
@@ -48,6 +48,7 @@ function openMenu(){
     menuOverlay.classList.add("show");
 
 }
+
 
 
 function closeMenuFunc(){
@@ -67,11 +68,13 @@ if(menuBtn){
 }
 
 
+
 if(closeMenu){
 
     closeMenu.addEventListener("click", closeMenuFunc);
 
 }
+
 
 
 if(menuOverlay){
@@ -94,11 +97,13 @@ document.querySelectorAll(".side-menu a").forEach(link=>{
 
 });
 
+
+
+
+
 function showTyping(){
 
-
-    typing.style.display="flex";
-
+    typing.style.display = "flex";
 
 }
 
@@ -106,12 +111,9 @@ function showTyping(){
 
 function hideTyping(){
 
-
-    typing.style.display="none";
-
+    typing.style.display = "none";
 
 }
-
 
 
 
@@ -120,33 +122,26 @@ function hideTyping(){
 
 async function sendMessage(){
 
-
-    const text=input.value.trim();
-
+    const text = input.value.trim();
 
 
     if(!text) return;
 
 
-
-
     addMessage(text,"user");
 
 
-    input.value="";
-
+    input.value = "";
 
 
     showTyping();
 
 
 
-
     try{
 
 
-        const response =
-        await fetch(API_URL,{
+        const response = await fetch(API_URL,{
 
             method:"POST",
 
@@ -155,7 +150,6 @@ async function sendMessage(){
                 "Content-Type":"application/json"
 
             },
-
 
             body:JSON.stringify({
 
@@ -167,10 +161,7 @@ async function sendMessage(){
 
 
 
-
-        const data =
-        await response.json();
-
+        const data = await response.json();
 
 
 
@@ -192,42 +183,22 @@ async function sendMessage(){
 
     }
 
+    catch(error){
 
 
-  catch(error){
-
-    hideTyping();
-
-    console.error("ERROR:", error);
-
-    addMessage(
-        "متأسفانه مشکلی در سرور PWEG AI پیش آمده ، لطفا بعدا دوباره تلاش کنید."
-    );
+        hideTyping();
 
 
-sendBtn.addEventListener(
-
-"click",
-
-sendMessage
-
-);
+        console.error("ERROR:", error);
 
 
+        addMessage(
 
+            "متأسفانه مشکلی در سرور PWEG AI پیش آمده ، لطفا بعدا دوباره تلاش کنید.",
 
+            "ai"
 
-input.addEventListener(
-
-"keydown",
-
-function(e){
-
-
-    if(e.key==="Enter"){
-
-
-        sendMessage();
+        );
 
 
     }
@@ -235,4 +206,47 @@ function(e){
 
 }
 
-);
+
+
+
+
+
+if(sendBtn){
+
+    sendBtn.addEventListener(
+
+        "click",
+
+        sendMessage
+
+    );
+
+}
+
+
+
+
+
+if(input){
+
+    input.addEventListener(
+
+        "keydown",
+
+        function(e){
+
+
+            if(e.key==="Enter"){
+
+
+                sendMessage();
+
+
+            }
+
+
+        }
+
+    );
+
+}
