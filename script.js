@@ -29,6 +29,7 @@ function addMessage(text,type){
     messages.scrollTop =
     messages.scrollHeight;
 
+}
 
 // ===========================
 // MENU
@@ -206,19 +207,6 @@ async function sendMessage(){
     addMessage(
         "متأسفانه مشکلی در سرور PWEG AI پیش آمده ، لطفا بعدا دوباره تلاش کنید."
     );
-
-}
-
-
-    }
-
-
-
-}
-
-
-
-
 
 
 sendBtn.addEventListener(
