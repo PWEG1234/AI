@@ -30,8 +30,6 @@ function addMessage(text,type){
     messages.scrollHeight;
 
 
-}
-
 // ===========================
 // MENU
 // ===========================
@@ -214,7 +212,13 @@ async function sendMessage(){
 
     }
 
+
+
 }
+
+
+
+
 
 
 sendBtn.addEventListener(
