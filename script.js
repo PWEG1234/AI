@@ -207,8 +207,7 @@ async function sendMessage(){
     console.error("ERROR:", error);
 
     addMessage(
-        "خطا: " + error.message,
-        "ai"
+        "متأسفانه مشکلی در سرور PWEG AI پیش آمده ، لطفا بعدا دوباره تلاش کنید."
     );
 
 }
