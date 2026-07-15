@@ -200,19 +200,18 @@ async function sendMessage(){
 
 
 
-    catch(error){
+  catch(error){
 
+    hideTyping();
 
-        hideTyping();
+    console.error("ERROR:", error);
 
-
-        addMessage(
-
-        "متأسفانه مشکلی در سرور PWEG AI پیش آمده ، لطفا بعدا دوباره تلاش کنید.",
-
+    addMessage(
+        "خطا: " + error.message,
         "ai"
+    );
 
-        );
+}
 
 
     }
