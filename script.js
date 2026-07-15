@@ -1,16 +1,3 @@
-const API_URL = "https://pweg-ai.pwegaparat.workers.dev";
-
-
-
-const input = document.getElementById("userInput");
-
-const sendBtn = document.getElementById("sendBtn");
-
-const messages = document.getElementById("messages");
-
-const typing = document.getElementById("typing");
-
-
 // ===========================
 // MENU
 // ===========================
@@ -75,6 +62,17 @@ document.querySelectorAll(".side-menu a").forEach(link=>{
 });
 
 
+const API_URL = "https://pweg-ai.pwegaparat.workers.dev";
+
+
+
+const input = document.getElementById("userInput");
+
+const sendBtn = document.getElementById("sendBtn");
+
+const messages = document.getElementById("messages");
+
+const typing = document.getElementById("typing");
 
 
 function addMessage(text,type){
