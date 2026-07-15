@@ -254,3 +254,5 @@ function(e){
 }
 
 );
+
+console.log("sendBtn:", sendBtn);
