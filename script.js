@@ -214,6 +214,7 @@ async function sendMessage(){
 
     }
 
+}
 
 
 sendBtn.addEventListener(
